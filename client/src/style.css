@@ -1,0 +1,236 @@
+/* Local do arquivo: /client/src/style.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --background-color: #f0f2f5;
+  --container-bg-color: #ffffff;
+  --sidebar-bg-color: #f8f9fa;
+  --border-color: #dee2e6;
+  --text-color: #333;
+  --light-text-color: #888;
+  --my-message-bg: #0084ff;
+  --other-message-bg: #e4e6eb;
+  --system-message-color: #6c757d;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  color: var(--text-color);
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* --- TELA DE LOGIN --- */
+.username-container {
+  background: var(--container-bg-color);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.username-container h1 {
+  margin-bottom: 20px;
+  color: #1c1e21;
+}
+
+.username-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.username-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.username-container button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* --- LAYOUT PRINCIPAL DO CHAT --- */
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background: var(--container-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* --- BARRA LATERAL (USUÁRIOS ONLINE) --- */
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg-color);
+  border-right: 1px solid var(--border-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.user-list li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+/* --- ÁREA PRINCIPAL DO CHAT --- */
+.main-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--container-bg-color);
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* --- LISTA DE MENSAGENS --- */
+.messages-list {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-item {
+  max-width: 70%;
+  line-height: 1.4;
+}
+
+.message-item p {
+  margin: 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-header strong {
+  font-size: 0.9rem;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: var(--light-text-color);
+}
+
+.other-message {
+  background-color: var(--other-message-bg);
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+}
+
+.my-message {
+  background-color: var(--my-message-bg);
+  color: white;
+  align-self: flex-end;
+  padding: 10px 15px;
+  border-radius: 18px;
+  border-bottom-right-radius: 4px;
+}
+
+.my-message .timestamp {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.system-message {
+  align-self: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--system-message-color);
+}
+
+/* --- INDICADOR DE "DIGITANDO" E FORMULÁRIO DE INPUT --- */
+.typing-indicator {
+  height: 20px;
+  padding: 0 20px 5px;
+  font-style: italic;
+  color: var(--light-text-color);
+  font-size: 0.9rem;
+}
+
+.message-form {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg-color);
+}
+
+.message-form input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.message-form button {
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.message-form button:hover {
+  background-color: var(--primary-hover-color);
+}
