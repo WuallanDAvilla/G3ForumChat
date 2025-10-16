@@ -6,7 +6,7 @@ import './style.css';
 import Login from './components/Login';
 import Chat from './components/Chat';
 
-const socket = io('http://localhost:4000');
+const socket = io(import.meta.env.VITE_API_URL);
 
 // Tipos de dados
 interface User {
